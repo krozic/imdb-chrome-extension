@@ -1,0 +1,39 @@
+{
+    "name": "IMDB Genre Ranking",
+    "version": "0.0.1",
+    "description": "Adds percentage rank values to genre bubbles on iMDB",
+    "permissions": ["tabs"],
+    "host_permissions": ["https://*.imdb.com/*"],
+    "icons": {
+      "16": "assets/ext-icon.png",
+      "24": "assets/ext-icon.png",
+      "32": "assets/ext-icon.png",
+      "128": "assets/ext-icon.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.imdb.com/*"],
+        "js": ["contentScript.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "data/imdb_genre_rank.json"
+        ],
+        "matches": ["https://*.imdb.com/*"]
+      }
+    ],
+    "action": {
+      "default_icon": {
+        "16": "assets/ext-icon.png",
+        "24": "assets/ext-icon.png",
+        "32": "assets/ext-icon.png"
+      },
+      "default_title": "IMDB Genre Ranking"
+    },
+    "manifest_version": 3
+}
