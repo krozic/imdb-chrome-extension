@@ -46,7 +46,7 @@ def table_to_json(tableName):
 
     # json_pretty = json.dumps(genre_dict, indent=4)
 
-    with open(f'{tableName}.json', 'w') as outfile:
+    with open(f'./json/{tableName}.json', 'w') as outfile:
         json.dump(genre_dict, outfile)
 
 table_names = ['imdb_genre_rank', 'tv_imdb_genre_rank']
