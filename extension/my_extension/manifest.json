@@ -2,7 +2,7 @@
     "name": "IMDB Genre Ranking",
     "version": "0.0.1",
     "description": "Adds percentage rank values to genre bubbles on iMDB",
-    "permissions": ["tabs"],
+    "permissions": ["tabs", "storage"],
     "host_permissions": ["https://*.imdb.com/*"],
     "icons": {
       "16": "assets/ext-icon.png",
@@ -33,7 +33,8 @@
         "24": "assets/ext-icon.png",
         "32": "assets/ext-icon.png"
       },
-      "default_title": "IMDB Genre Ranking"
+      "default_title": "IMDB Genre Ranking",
+      "default_popup": "popup.html"
     },
     "manifest_version": 3
 }
