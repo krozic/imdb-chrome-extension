@@ -45,7 +45,7 @@
                 genre_dict = tv_genre_dict
             }
             let rating_div = document.querySelectorAll('[data-testid="hero-rating-bar__aggregate-rating__score"]')[0]
-            let rating = parseFloat(rating_div.getElementsByTagName("span")[0].textContent)
+            let rating = rating_div.getElementsByTagName("span")[0].textContent
           
             let genre_div = document.getElementsByClassName("ipc-chip-list__scroller")[0]
             let genre_list = genre_div.getElementsByTagName("span")
@@ -56,14 +56,12 @@
                 let rank = genre_dict[genre_text][rating]
 
                 let settings = await fetchSettings();
-                console.log("settings are" + settings);
-                console.log(settings);
-                console.log("prefix is " + settings["prefix"]);
+                console.log(settings)
                 // chrome.storage.sync.get(["settings"]).then((result) => {
                 //     console.log("Value currently is " + result.key);
                 // });
 
-                genre.textContent = genre_text.concat(settings["prefix"], Math.round(rank) * settings["multiplier"], settings["suffix"])
+                genre.textContent = genre_text.concat(settings["prefix"], (rank * settings["multiplier"]).toFixed(settings["decimals"]), settings["suffix"])
             //   genre.textContent = genre_text.concat(" ", parseFloat(rank/10).toFixed(1), "/10")
             }
         }

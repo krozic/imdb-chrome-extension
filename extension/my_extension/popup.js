@@ -2,7 +2,8 @@ let defaultValues = {
 	"settings": {
 		"prefix": " (",
 		"suffix": ")",
-		"multiplier": "1" 
+		"multiplier": "1",
+		"decimals": "0" 
 	}
 }
 
@@ -20,11 +21,12 @@ const fetchSettings = () => {
 		})
 }
 
-const changeSettings = (prefix, suffix, multiplier) => {
+const changeSettings = (prefix, suffix, multiplier, decimals) => {
 	let settings = {
 		"prefix": prefix,
 		"suffix": suffix,
-		"multiplier": multiplier
+		"multiplier": multiplier,
+		"decimals": decimals
 	}
 
 	chrome.storage.sync.set({
@@ -42,19 +44,22 @@ let settings = await fetchSettings();
 document.getElementById("prefix").value = settings["prefix"];
 document.getElementById("suffix").value = settings["suffix"];
 document.getElementById("multiplier").value = settings["multiplier"];
+document.getElementById("decimals").value = settings["decimals"];
 
 document.getElementById("submit-button").addEventListener("click", async function() {
 	let prefix = await document.getElementById("prefix").value;
 	let suffix = await document.getElementById("suffix").value;
 	let multiplier = await document.getElementById("multiplier").value;
+	let decimals = await document.getElementById("decimals").value;
 
-	changeSettings(prefix, suffix, multiplier);
+	changeSettings(prefix, suffix, multiplier, decimals);
 });
 
 document.getElementById("default-button").addEventListener("click", async function() {
 	let prefix = " (";
 	let suffix = ")";
 	let multiplier = "1";
+	let decimals= "0";
 
-	changeSettings(prefix, suffix, multiplier);
+	changeSettings(prefix, suffix, multiplier, decimals);
 });

@@ -6,14 +6,24 @@
     <div class="title">Genre Ranking Settings</div>
     <br>
     <form>
+      <div class="form-div">
         <label for="prefix">Prefix:</label>
-        <input class = "textbox" type="text" id="prefix" name="prefix"><br><br>
+        <input class="textbox" type="text" id="prefix" name="prefix">
         <label for="suffix">Suffix:</label>
-        <input type="text" id="suffix" name="suffix"><br><br>
+        <input class="textbox" type="text" id="suffix" name="suffix">
         <label for="multiplier">Multiplier:</label>
-        <input type="text" id="multiplier" name="multiplier"><br><br><br>
-        <input type="submit" id="submit-button" value="Apply"><br><br>
-        <input type="submit" id="default-button" value="Default Settings">
+        <input class="textbox" type="text" id="multiplier" name="multiplier">
+        <label for="decimals">Decimals:</label>
+        <input class="textbox" type="text" id="decimals" name="decimals">
+      </div>
+      <div class="button-container">
+        <div class="buttons">
+          <input class="button" type="submit" id="submit-button" value="Apply"><br><br>
+        </div>
+        <div class="buttons">
+          <input class="button" type="submit" id="default-button" value="Default Settings">
+        </div>
+      </div>
     </form>
   </div>
 </div>
