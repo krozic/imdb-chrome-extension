@@ -57,12 +57,8 @@
 
                 let settings = await fetchSettings();
                 console.log(settings)
-                // chrome.storage.sync.get(["settings"]).then((result) => {
-                //     console.log("Value currently is " + result.key);
-                // });
 
                 genre.textContent = genre_text.concat(settings["prefix"], (rank * settings["multiplier"]).toFixed(settings["decimals"]), settings["suffix"])
-            //   genre.textContent = genre_text.concat(" ", parseFloat(rank/10).toFixed(1), "/10")
             }
         }
     }

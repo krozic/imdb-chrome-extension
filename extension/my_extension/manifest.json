@@ -1,9 +1,8 @@
 {
     "name": "IMDB Genre Ranking",
     "version": "0.0.1",
-    "description": "Adds percentage rank values to genre bubbles on iMDB",
+    "description": "Adds percentage rank values to genre bubbles on IMDB",
     "permissions": ["tabs", "storage"],
-    "host_permissions": ["https://*.imdb.com/*"],
     "icons": {
       "16": "assets/ext-icon.png",
       "24": "assets/ext-icon.png",
@@ -17,14 +16,6 @@
       {
         "matches": ["https://*.imdb.com/*"],
         "js": ["contentScript.js"]
-      }
-    ],
-    "web_accessible_resources": [
-      {
-        "resources": [
-          "data/imdb_genre_rank.json"
-        ],
-        "matches": ["https://*.imdb.com/*"]
       }
     ],
     "action": {
